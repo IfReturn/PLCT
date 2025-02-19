@@ -716,7 +716,7 @@ ros2 run turtlesim turtlesim_node
 
 运行结果如下：
 
-![](G:\PLCT\ROS\Resources\Test_turtle.png)
+![](./Resources/Test_turtle.png)
 
 小乌龟可以正常启动，无报错.
 
