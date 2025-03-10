@@ -1,10 +1,10 @@
 # Gazebo OpenEuler测试
 ## 环境配置
-OS:OpenEuler 24.03 x86_64 WSL
+OS:OpenEuler 24.03 x86_64 WSL   
 硬件平台：
-CPU: AMD Ryzen9 7940HX
-GPU0: NVIDIA RTX 4060 Laptop(8G VRAM)
-GPU1: AMD Radeon 610M
+CPU: AMD Ryzen9 7940HX    
+GPU0: NVIDIA RTX 4060 Laptop(8G VRAM)    
+GPU1: AMD Radeon 610M   
 内存容量:64G
 ### 安装gazebo
 ```shell
