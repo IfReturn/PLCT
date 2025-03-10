@@ -59,4 +59,10 @@ AL lib: (WW) alc_initconfig: Failed to initialize backend "jack"
 ```shell
 dnf install mesa*
 ```
-仍无改善
+仍无改善   
+在源中搜索`zink_dri.so`
+```shell
+dnf provides */zink_dri.so                                                                                                                 
+Error: No matches found. If searching for a file, try specifying the full path or using a wildcard prefix ("*/") at the beginning.
+```
+无结果
