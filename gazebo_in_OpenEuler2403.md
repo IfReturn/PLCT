@@ -96,10 +96,10 @@ wsl的`dmesg`为
 rm -r /tmp/.X11-unix
 ln -sf /mnt/wslg/.X11-unix/ /tmp/
 ```
-WSL恢复正常，且性能正常（TODO:找出原因）    
+WSL恢复正常，虽然控制台依然有err输出但是性能正常（TODO:找出性能问题的产生原因）    
 将分配给vmware的内存从4G提高到16G，可以正常启动，降低到8G，无法正常启动。    
 此情况下，不使用`gazebo`而是依次分别调用`gzserver`和`gzclient`，可以正常启动，结合`dmesg`相关信息，猜测是调用`gazebo`时产生的`fork`操作导致了子进程过多复制父进程内存而产生了oom杀死了图形化界面
 
 ## 发现的问题
-1. 没有软件包提供`/usr/lib/libhdf5.so.310`，而系统中存在`/usr/lib64/mpich/lib/libhdf5.so.310`
+1. 没有软件包提供`/usr/lib/libhdf5.so.310`，而系统中存在`/usr/lib64/mpich/lib/libhdf5.so.310`，经测试可用
 2. 在小内存时(<=16G)，启动gazebo会导致oom
