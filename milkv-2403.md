@@ -11,7 +11,7 @@
 由于显卡和NPU暂时缺少驱动，只能先使用23.09版本测试yolo
 ## 23.09环境配置
 这里参考荔枝派的文档https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/8_application.html#Yolov5n
-由于oerv.wiki暂时无法访问（截至2025-4-5），没拿到23.09不带ros的镜像，故不包含ros的配置
+由于oerv.wiki暂时无法访问（截至2025-4-24），没拿到23.09不带ros的镜像，故不包含ros的配置
 ### python环境
 #### 安装预编译的python wheel
 由于需要同时使用ros的环境，所以不采取虚拟环境安装，
@@ -69,7 +69,7 @@ docker run hhb4tools/hhb
 测试yolo11模型需要一个不支持的算子`batch_matmul`，无法使用，使用yolov8则可以完成编译
 这里查看yolov8n的输入输出和yolo11n相同，不再赘述。
 ```
- yolo export model=yolo11v8n.pt format=onnx
+ yolo export model=yolov8n.pt format=onnx
  hhb -C --model-file ./yolov8n.onnx --data-scale-div 255 --board th1520 --input-name "images" --output-name "output0" --input-shape "1 3 640 640" --calibrate-dataset bus.jpg  --quantization-scheme "int8_asym"
 ```
 4. 将产生的hhb_out目录传到开发板上
