@@ -1,16 +1,16 @@
 # 在milk-v meles上测试ROS与yolo算法
 ## 24.03环境配置
 使用已经适配过的23.09版本镜像，刷入后使用lpi4a的rootfs替换  
-替换后还需要进行额外操作：
-1. 更改fstab到正确的设备来正确挂载boot
-2. 拷贝modules到新的rootfs
-3. 拷贝博通网卡的firmware到新的rootfs
-4. 在rc.local中配置pwm输出来启用风扇
+替换后有一些问题：
+1. 需要更改fstab到正确的设备来正确挂载boot
+2. 拷贝一些modules到新的rootfs来适配部分硬件
+3. 拷贝博通网卡的firmware到新的rootfs来启用wifi
+4. 需要在rc.local中配置pwm输出来启用风扇
 5. 显卡与NPU缺少驱动
 6. 6.6内核对应的dtb有错误  
 由于显卡和NPU暂时缺少驱动，只能先使用23.09版本测试yolo
 ## 23.09环境配置
-这里参考荔枝派的文档https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/8_application.html#Yolov5n
+这里参考荔枝派的文档(https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/8_application.html#Yolov5n)  
 由于oerv.wiki暂时无法访问（截至2025-4-24），没拿到23.09不带ros的镜像，故不包含ros的配置
 ### python环境
 #### 安装预编译的python wheel
